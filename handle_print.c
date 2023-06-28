@@ -6,10 +6,10 @@
  * @fmt: prints the arguments.
  * Return: 1.
  */
-int handle_print(const char *fmt, int *ind, va_list list, char buffer[], int flags, int width, int precision, int size)
+int handle_print(const char *fmt, int *ind, char buffer, int flags, int width, int precision, int size)
 {
 	int m, unko_len = 0, print_char = -1;
-	fmt_type[] = {
+	fmt_type[m] = {
 		{ 'c', print_char}, {'s', print_str}, {'%', print_perc},
 		{'i', print_int}, {'d', print_int}, {'b', print_binary}
 		{'u', print_unsi}, {'o', print_oct}, {'x', print_hex},
@@ -36,5 +36,5 @@ int handle_print(const char *fmt, int *ind, va_list list, char buffer[], int fla
 			unko_len += write(1, &fmt[*ind], 1);
 					return (unko_len);
 					}
-					return (-1);
-					}
+					return (print_char);
+	}
