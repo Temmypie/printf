@@ -9,6 +9,7 @@ int get_size(const char *format, int *i)
 {
 	int cu_i = *i + 1;
 	int size = 0;
+
 	if (format[cu_i] == 'I')
 		size = S_LONG;
 	else if (format[cu_i] == 'h')
