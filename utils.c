@@ -41,6 +41,7 @@ int is_digit(char c)
 
 	return (0);
 }
+<<<<<<< HEAD
 /**
  * convert_size_number - function
  * @num: argument
@@ -48,6 +49,9 @@ int is_digit(char c)
  * Return: num.
  */
 long in convert_size_number(long int num, int size)
+=======
+long int convert_size_number(long int num, int size)
+>>>>>>> 0ae1ce799ce1e93d108f64741c5b9aa8e34f488c
 {
 	if (size == S_LONG)
 		return (num);
