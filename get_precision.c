@@ -1,8 +1,9 @@
 #include "main.h"
 /**
- * get_precision: print t precision.
+ * get_precision - print t precision.
  * @list: arguments
- *@format: constant character.
+ * @format: constant character.
+ * @i: argument
  * Return: precision.
  */
 int get_precision(const char *format, int *i, va_list list)
@@ -17,7 +18,7 @@ int get_precision(const char *format, int *i, va_list list)
 	{
 		if (is_digit(format[cu_i]))
 		{
- 			prec *= 10;
+			prec *= 10;
 			prec += format[cu_i] - '0';
 		}
 		else if (format[cu_i] == '*')
