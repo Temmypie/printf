@@ -1,16 +1,21 @@
 #include "main.h"
 /**
- * handle_writes - ouputs a string
+ * handle_write_char - ouputs a string
  * @size: size
  * @width: width
+ * @c: character.
+ * @flags: flags.
+ * @precision: prec.
  * @buffer: arrays that handle prints
  * Return: 0.
  */
-int handle_write_char(char c, char buffer[], int flags, int width, int precision, int size)
+int handle_write_char(char c, char buffer[],
+		int flags, int width, int precision, int size)
 {
 	int m = 0;
-	char pad = '';
+	char pad = ' ';
 	UNUSED(prec);
+
 	UNUSED(size);
 	if (flags & F_ZERO)
 		pad  '0';
@@ -32,7 +37,8 @@ int handle_write_char(char c, char buffer[], int flags, int width, int precision
 
 	return (write(1, &buffer[0], 1));
 }
-int write_number(int is_negative, int ind, char buffer[], int flags, int width, int precision, int size)
+int write_number(int is_negative, int ind, char buffer[], int flags,
+		int width, int precision, int size)
 {
 	int length = BUFF_SIZE - ind - 1;
 	char pad = ' ', ext_char = 0;
@@ -47,9 +53,11 @@ int write_number(int is_negative, int ind, char buffer[], int flags, int width, 
 	else if (flags & F_SPACE)
 		ext_char = ' ';
 
-	return (write_num(ind, buffer, flags, width, precision,	length, pad, ext_char));
+	return (write_num(ind, buffer, flags, width,
+				precision, length, pad, ext_char));
 }
-int write_num(int ind, char buffer[], int flags, int width, int prec, int length, char padd, char extra_c)
+int write_num(int ind, char buffer[], int flags, int width, int prec,
+		int length, char padd, char extra_c)
 {
 	int i, pad_start = 1;
 
