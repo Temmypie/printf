@@ -1,8 +1,9 @@
 #include "main.h"
 /**
- * get_precision: print t precision.
+ * get_precision - print t precision.
  * @list: arguments
- *@format: constant character.
+ * @format: constant character.
+ * @i: argument
  * Return: precision.
  */
 int get_precision(const char *format, int *i, va_list list)
