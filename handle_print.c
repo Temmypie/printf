@@ -4,12 +4,18 @@
  * @width: integer width
  * @size: for specifier
  * @fmt: prints the arguments.
+ * @ind: ind.
+ * @buffer: handles print.
+ * @flags: flags are calculated.
+ * @precision: precision.
  * Return: 1.
  */
-int handle_print(const char *fmt, int *ind, char buffer, int flags, int width, int precision, int size)
+int handle_print(const char *fmt, int *ind, char buffer, int flags,
+		int width, int precision, int size)
 {
 	int m, unko_len = 0, print_char = -1;
 	fmt_type[m] = {
+
 		{ 'c', print_char}, {'s', print_str}, {'%', print_perc},
 		{'i', print_int}, {'d', print_int}, {'b', print_binary}
 		{'u', print_unsi}, {'o', print_oct}, {'x', print_hex},
